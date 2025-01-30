@@ -17,6 +17,7 @@ const TRACKER_PARAMS = new Set([
 ]);
 
 export const cleanCommonTracker: RuleProcessor = {
+  name: "cleanCommonTracker",
   should: () => true,
   process: (url) => {
     const params = url.searchParams;

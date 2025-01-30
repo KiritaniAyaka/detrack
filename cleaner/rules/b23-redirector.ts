@@ -1,6 +1,7 @@
 import { RuleProcessor } from "./rule-type.ts";
 
 export const b23Redirector: RuleProcessor = {
+  name: "b23Redirector",
   should: (url) => url.hostname === "b23.tv",
   process: async (url) => {
     const response = await fetch(url);
