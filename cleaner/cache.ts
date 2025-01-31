@@ -3,7 +3,7 @@
 import { URLCleanerError } from "./error.ts";
 
 const kv = await Deno.openKv("cleaner_cache.db");
-const ENABLE_CACHE = Deno.env.get("CACGE")?.startsWith("e");
+const ENABLE_CACHE = Deno.env.get("CACHE")?.startsWith("e");
 
 const CLEANER_CACHE_KEY = "cleaner_cache";
 const APP_VERSION = 1;
