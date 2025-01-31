@@ -3,9 +3,9 @@ import { rules } from "./rules/index.ts";
 import { getCachedURL, setCachedURL } from "./cache.ts";
 
 export async function cleanURL(urlString: string): Promise<string> {
-  console.log("Start cleaning:", urlString);
   try {
     let url = new URL(urlString);
+    console.log("Start cleaning:", urlString);
     const cached = await getCachedURL(url.toString());
     if (cached) {
       console.log("Cache hit:", cached);

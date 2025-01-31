@@ -2,8 +2,15 @@
 
 import { URLCleanerError } from "./error.ts";
 
-const kv = await Deno.openKv("cleaner_cache.db");
-const ENABLE_CACHE = Deno.env.get("CACHE")?.startsWith("e");
+// if DENO_DEPLOYMENT_ID exists, it runs on Deno Deploy
+// Deno Deploy doesn't support path-specified database
+const kv = await Deno.openKv(
+  Deno.env.get("DENO_DEPLOYMENT_ID") ? undefined : "cleaner_cache.db",
+);
+
+const ENABLE_CACHE = !Deno.env.get("CACHE")?.toLowerCase()?.startsWith(
+  "disable",
+);
 
 const CLEANER_CACHE_KEY = "cleaner_cache";
 const APP_VERSION = 1;
@@ -19,7 +26,10 @@ if (Deno.build.os !== "windows") {
 }
 
 export async function getCachedURL(url: string): Promise<string | null> {
-  if (!ENABLE_CACHE) return null;
+  if (!ENABLE_CACHE) {
+    console.log("Cache skipped because it's disabled");
+    return null;
+  }
 
   const key = [CLEANER_CACHE_KEY, APP_VERSION, url];
   const result = await kv.get<string>(key);
