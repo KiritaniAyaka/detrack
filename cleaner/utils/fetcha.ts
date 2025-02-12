@@ -14,8 +14,6 @@ export const fetcha = new FetchaBuilder()
     // default not follow redirect
     init.redirect ??= "manual";
 
-    console.log(init)
-
     return [info, init];
   })
   .build();

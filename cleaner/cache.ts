@@ -1,5 +1,5 @@
 /// <reference lib="deno.unstable" />
-
+import { createLogger } from "@kiritaniayaka/logging";
 import { URLCleanerError } from "./error.ts";
 
 // if DENO_DEPLOYMENT_ID exists, it runs on Deno Deploy
@@ -25,9 +25,11 @@ if (Deno.build.os !== "windows") {
   Deno.addSignalListener("SIGTERM", teardown);
 }
 
+const logger = createLogger("Cache");
+
 export async function getCachedURL(url: string): Promise<string | null> {
   if (!ENABLE_CACHE) {
-    console.log("Cache skipped because it's disabled");
+    logger.info("Cache skipped because it's disabled");
     return null;
   }
 
@@ -42,9 +44,10 @@ export async function setCachedURL(
 ): Promise<void> {
   const key = [CLEANER_CACHE_KEY, APP_VERSION, originalUrl];
   try {
+    logger.info("Caching URL:", originalUrl, "->", cleanedUrl);
     await kv.set(key, cleanedUrl);
   } catch (error) {
-    console.error("Failed to cache URL:", error);
+    logger.error("Failed to cache URL:", error);
     throw new URLCleanerError("Failed to cache URL");
   }
 }
