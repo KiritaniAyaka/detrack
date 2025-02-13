@@ -32,5 +32,3 @@ jobs:
           project: "detrack"
           entrypoint: "main.ts"
           root: "."
-          
-          

@@ -13,10 +13,12 @@ export const handler: Handlers = {
       }
 
       const cleanedUrl = await cleanURL(url);
-      
+
       if (action === "clean") {
         // Clean URL
-        return Response.redirect(new URL(`/preview?result=${encodeURIComponent(cleanedUrl)}`, req.url));
+        return Response.redirect(
+          new URL(`/preview?result=${encodeURIComponent(cleanedUrl)}`, req.url),
+        );
       }
       // Directly redirect to the cleaned URL
       return new Response(null, {
