@@ -40,7 +40,7 @@ export default function PreviewPage(props: PageProps<PreviewData>) {
                   Cleaned:
                 </label>
                 <div class="min-h-12 mt-1 p-2 bg-gray-50 rounded-md break-all relative group">
-                  <div class="absolute right-2 top-2">
+                  <div class="float-right right-2 top-2">
                     <CopyButton url={result} />
                   </div>
                   {result}
