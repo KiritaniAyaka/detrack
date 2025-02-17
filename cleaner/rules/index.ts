@@ -2,6 +2,7 @@ import { cleanCommonTracker } from "./common-cleaner.ts";
 import { bilibiliCleaner } from "./bilibili-cleaner.ts";
 import { b23Redirector } from "./b23-redirector.ts";
 import { taobaoCleaner } from "./taobao-cleaner.ts";
+import { rednoteCleaner } from "./rednote-cleaner.ts";
 import type { RuleProcessor } from "./rule-type.ts";
 
 const originalRules = [
@@ -9,6 +10,7 @@ const originalRules = [
   bilibiliCleaner,
   b23Redirector,
   taobaoCleaner,
+  rednoteCleaner,
 ];
 
 export const rules: RuleProcessor[] = originalRules.sort(
