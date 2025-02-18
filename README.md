@@ -2,7 +2,14 @@
 
 Remove tracking parameters from your URLs.
 
-Currently supports:
+<details>
+
+<summary>Supported tracker:</summary>
 
 - Common tracking parameters
 - bilibili and b23.tv
+- Taobao
+- Xiaohongshu (a.k.a REDnote)
+- Boss Zhipin
+
+</details>
