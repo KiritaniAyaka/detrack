@@ -5,6 +5,7 @@ import { taobaoCleaner } from "./taobao-cleaner.ts";
 import { rednoteCleaner } from "./rednote-cleaner.ts";
 import { bossZhipinCleaner } from "./boss-zhipin-cleaner.ts";
 import type { RuleProcessor } from "./rule-type.ts";
+import { rednoteRedirector } from "./rednote-redirector.ts";
 
 const originalRules = [
   cleanCommonTracker,
@@ -12,6 +13,7 @@ const originalRules = [
   b23Redirector,
   taobaoCleaner,
   rednoteCleaner,
+  rednoteRedirector,
   bossZhipinCleaner,
 ];
 
