@@ -6,6 +6,8 @@ import { rednoteCleaner } from "./rednote-cleaner.ts";
 import { bossZhipinCleaner } from "./boss-zhipin-cleaner.ts";
 import type { RuleProcessor } from "./rule-type.ts";
 import { rednoteRedirector } from "./rednote-redirector.ts";
+import { jdCleaner } from "./jd-cleaner.ts";
+import { jdRedirector } from "./jd-redirector.ts";
 
 const originalRules = [
   cleanCommonTracker,
@@ -15,6 +17,8 @@ const originalRules = [
   rednoteCleaner,
   rednoteRedirector,
   bossZhipinCleaner,
+  jdCleaner,
+  jdRedirector,
 ];
 
 export const rules: RuleProcessor[] = originalRules.sort(
