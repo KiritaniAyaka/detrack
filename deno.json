@@ -22,6 +22,7 @@
   ],
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
+    "@/": "./",
     "@kiritaniayaka/fetcha": "jsr:@kiritaniayaka/fetcha@^0.1.1",
     "@kiritaniayaka/logging": "jsr:@kiritaniayaka/logging@^0.1.0",
     "preact": "https://esm.sh/preact@10.22.0",
@@ -33,7 +34,8 @@
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
     "@tailwindcss/forms": "npm:@tailwindcss/forms@0.5.10",
     "$std/": "https://deno.land/std@0.216.0/",
-    "user-agents": "npm:user-agents@1.1.436"
+    "user-agents": "npm:user-agents@1.1.436",
+    "motion/react": "https://esm.sh/motion@12.12.1/react?alias=react:preact/compat&external=preact"
   },
   "compilerOptions": {
     "jsx": "react-jsx",

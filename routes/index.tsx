@@ -1,5 +1,6 @@
 import { FreshContext, Handlers } from "$fresh/server.ts";
-import { cleanURL, URLCleanerError } from "../cleaner/index.ts";
+import { cleanURL, URLCleanerError } from "@/cleaner/index.ts";
+import URLInput from "@/islands/URLInput.tsx";
 
 export const handler: Handlers = {
   POST: async (req: Request, ctx: FreshContext) => {
@@ -48,21 +49,7 @@ export default function Home() {
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
           <form method="POST" action="/">
-            <div>
-              <label
-                htmlFor="url"
-                className="block text-xs font-medium text-gray-700"
-              >
-                Enter URL
-              </label>
-              <input
-                type="url"
-                name="url"
-                id="url"
-                placeholder="https://example.com?utm_source=..."
-                className="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
-              />
-            </div>
+            <URLInput />
             <div class="flex gap-2">
               <button
                 type="submit"
