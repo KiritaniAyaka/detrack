@@ -15,7 +15,6 @@ export function createHttpRedirector({
     should: (url) => url.hostname === hostname,
     process: async (url) => {
       const response = await fetcha(url);
-      console.log(response.status);
       if (!String(response.status).startsWith("3")) return url;
 
       const location = response.headers.get("Location");
