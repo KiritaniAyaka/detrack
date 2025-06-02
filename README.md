@@ -9,6 +9,7 @@ Remove tracking parameters from your URLs.
 - Common tracking parameters
 - bilibili and b23.tv
 - Taobao
+- JD
 - Xiaohongshu (a.k.a REDnote)
 - Boss Zhipin
 
