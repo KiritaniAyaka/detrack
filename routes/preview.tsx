@@ -27,40 +27,62 @@ export default function PreviewPage(props: PageProps<PreviewData>) {
       <Head>
         <title>URL Preview - Detrack</title>
       </Head>
-      <div class="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-lg mx-auto">
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h1 class="text-2xl font-bold text-gray-900 mb-4">
-              Preview
-            </h1>
-
-            <div class="space-y-4">
-              <div>
-                <label class="block text-sm font-medium text-gray-700">
-                  Cleaned:
-                </label>
-                <div class="min-h-12 mt-1 p-2 bg-gray-50 rounded-md break-all relative group">
-                  <div class="float-right right-2 top-2">
-                    <CopyButton url={result} />
-                  </div>
+      <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8 flex items-center relative">
+        <div class="max-w-[600px] w-full mx-auto">
+          <div>
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">Preview</h1>
+            <p class="text-gray-600 mb-8">
+              Your cleaned URL is ready
+            </p>
+          </div>
+          
+          <div class="space-y-4">
+            <div>
+              <div class="relative py-4 px-6 bg-white/60 backdrop-blur-xl rounded-full border border-gray-200 shadow-md">
+                <div class="absolute top-2 right-2">
+                  <CopyButton url={result} />
+                </div>
+                <div class="pr-12 text-gray-800 break-all font-mono text-sm">
                   {result}
                 </div>
               </div>
+            </div>
 
-              <div class="flex gap-2 pt-4">
-                <a
-                  href={result}
-                  class="flex-1 inline-flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                >
+            <div class="flex gap-4">
+              <a
+                href={result}
+                class="group relative w-full py-2 px-4 rounded-full font-medium text-white transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-400/50 active:scale-95"
+                style={{
+                  background: "#3b82f6",
+                  border: "1px solid rgba(255, 255, 255, 0.2)",
+                  boxShadow: "0 8px 32px rgba(59, 130, 246, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)",
+                }}
+              >
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
                   Go to URL
-                </a>
-                <a
-                  href="/"
-                  class="flex-1 inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                >
+                </span>
+                <div class="absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              <a
+                href="/"
+                class="group relative w-full py-2 px-4 rounded-full font-medium text-white transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-gray-400/50 active:scale-95"
+                style={{
+                  background: "#6b7280",
+                  border: "1px solid rgba(255, 255, 255, 0.2)",
+                  boxShadow: "0 8px 32px rgba(107, 114, 128, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)",
+                }}
+              >
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                  </svg>
                   Back
-                </a>
-              </div>
+                </span>
+                <div class="absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
             </div>
           </div>
         </div>

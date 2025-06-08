@@ -46,7 +46,7 @@ interface DetectedUrlItemProps {
 function DetectedUrlItem({ url, onClick }: DetectedUrlItemProps) {
   return (
     <li
-      className="my-2 flex items-center bg-white border border-gray-200 rounded-lg cursor-pointer select-none px-4 py-2 shadow-sm hover:shadow-md transition-shadow animate-fade-in"
+      className="my-2 flex items-center bg-white/60 backdrop-blur-xl border border-gray-200 rounded-2xl cursor-pointer select-none px-6 py-4 shadow-md hover:shadow-lg transition-shadow animate-fade-in"
       onClick={onClick}
     >
       <div className="flex-shrink-0 mr-3">
@@ -79,18 +79,18 @@ export default function URLInput() {
 
   return (
     <div>
-      <label
+      {/* <label
         htmlFor="url"
         className="block text-xs font-medium text-gray-700"
       >
         Enter URL
-      </label>
+      </label> */}
       <input
         type="url"
         name="url"
         id="url"
         placeholder="https://example.com?utm_source=..."
-        className="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+        className="mt-1 w-full rounded-full px-6 py-4 border-gray-200 bg-white/60 backdrop-blur-xl shadow-md sm:text-sm"
         value={url}
         onInput={(e) => setUrl((e.target as HTMLInputElement).value)}
       />

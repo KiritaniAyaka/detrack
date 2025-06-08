@@ -6,6 +6,7 @@ import * as $_url_ from "./routes/[...url].tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $preview from "./routes/preview.tsx";
+import * as $Background from "./islands/Background.tsx";
 import * as $CopyButton from "./islands/CopyButton.tsx";
 import * as $URLInput from "./islands/URLInput.tsx";
 import type { Manifest } from "$fresh/server.ts";
@@ -18,6 +19,7 @@ const manifest = {
     "./routes/preview.tsx": $preview,
   },
   islands: {
+    "./islands/Background.tsx": $Background,
     "./islands/CopyButton.tsx": $CopyButton,
     "./islands/URLInput.tsx": $URLInput,
   },

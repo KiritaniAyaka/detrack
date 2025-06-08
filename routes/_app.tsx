@@ -1,4 +1,5 @@
 import { type PageProps } from "$fresh/server.ts";
+import Background from "../islands/Background.tsx";
 
 export default function App({ Component }: PageProps) {
   return (
@@ -11,6 +12,7 @@ export default function App({ Component }: PageProps) {
       </head>
       <body>
         <Component />
+        <Background />
       </body>
     </html>
   );

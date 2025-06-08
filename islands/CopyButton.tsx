@@ -21,7 +21,7 @@ export default function CopyButton({ url }: Props) {
   return (
     <button
       onClick={handleClick}
-      class="p-1.5 text-gray-500 hover:text-gray-700 hover:bg-gray-200 rounded-md transition-colors"
+      class="p-2 text-gray-500 hover:text-gray-700 hover:bg-[rgba(0,0,0,0.05)] rounded-full transition-colors"
       title="Copy to clipboard"
       type="button"
     >
