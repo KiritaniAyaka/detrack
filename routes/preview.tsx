@@ -42,7 +42,7 @@ export default function PreviewPage(props: PageProps<PreviewData>) {
           <div class="space-y-4">
             <div>
               <div class="relative py-4 px-6 bg-white/60 backdrop-blur-xl rounded-full border border-gray-200 shadow-md">
-                <div class="absolute top-2 right-2">
+                <div class="absolute top-2 right-2 bottom-2 flex items-center justify-center">
                   <CopyButton url={result} />
                 </div>
                 <div class="pr-12 text-gray-800 break-all font-mono text-sm">
