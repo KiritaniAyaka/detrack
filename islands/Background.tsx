@@ -67,8 +67,8 @@ export default function Background() {
         ref={backCircleRef}
         className="absolute rounded-full pointer-events-none will-change-transform"
         style={{
-          width: "700px",
-          height: "700px",
+          width: "min(700px, 80vw)",
+          height: "min(700px, 80vw)",
           background: "linear-gradient(135deg, #8b5cf6, #a855f7, #c084fc)",
           top: "0%",
           left: "-18%",
@@ -82,8 +82,8 @@ export default function Background() {
         ref={midCircleRef}
         className="absolute rounded-full pointer-events-none will-change-transform"
         style={{
-          width: "520px",
-          height: "520px",
+          width: "min(520px, 60vw)",
+          height: "min(520px, 60vw)",
           background: "linear-gradient(135deg, #06b6d4, #0891b2, #67e8f9)",
           top: "30%",
           right: "15%",
@@ -97,8 +97,8 @@ export default function Background() {
         ref={frontCircleRef}
         className="absolute rounded-full pointer-events-none will-change-transform"
         style={{
-          width: "450px",
-          height: "450px",
+          width: "min(450px, 40vw)",
+          height: "min(450px, 40vw)",
           background: "linear-gradient(135deg, #3b82f6, #1d4ed8, #60a5fa)",
           bottom: "5%",
           right: "-10%",
