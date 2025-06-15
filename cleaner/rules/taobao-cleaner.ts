@@ -8,7 +8,7 @@ const logger = createLogger("TaobaoCleaner");
 
 export const taobaoCleaner: RuleProcessor = {
   name: "taobaoCleaner",
-  should: (url) => url.hostname === "e.tb.cn",
+  should: (url) => url.hostname === "e.tb.cn" || url.hostname === "m.tb.cn",
   process: async (url) => {
     url = removeAllSearchParams(url);
     const response = await fetcha(url);
